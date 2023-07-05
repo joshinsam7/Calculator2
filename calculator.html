@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>google page</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+    </head>
+    <body>
+       <h1 id="calc">Calculator</h1>
+       <input id="result" class="res" type="text" size="22" disabled value="0"> 
+       <br>
+        <table>
+            <tr>
+                <button id="buttonWAC" class="button0"  onclick=ACclicked(this.value) type="button" >AC</button>
+                <button id="buttonW" class="button0"  onclick="NPclicked(result.value)" type="button" value="+/-" >+/-</button>
+                <button id="buttonW" class="button0 operatDiv"  onclick="numberclicked(this.value)" type="button" value="%">%</button>
+                <button id="buttonB" class="button5 operat"  onclick="numberclicked('/')" type="button" value="/">/</button>
+            </tr>
+            <br>
+            <tr>
+                <button id="buttonW" class="button1" onclick="numberclicked(this.value)" type="button" value="7" >7</button>
+                <button id="buttonW" class="button1" onclick="numberclicked(this.value)" type="button" value="8" >8</button>
+                <button id="buttonW" class="button1" onclick="numberclicked(this.value)" type="button" value="9" >9</button>
+                <button id="buttonB" class="button5 operat" onclick="numberclicked('*')"     type="button" value="*" >x</button>
+            </tr>
+            <tr> 
+            <br>
+                <button id="buttonW" class="button1" onclick="numberclicked(this.value)" type="button" value="4" >4</button>
+                <button id="buttonW" class="button1" onclick="numberclicked(this.value)" type="button" value="5" >5</button>
+                <button id="buttonW" class="button1" onclick="numberclicked(this.value)" type="button" value="6" >6</button>
+                <button id="buttonB" class="button5 operat" onclick="numberclicked(this.value)"     type="button" value="-" >-</button>
+            <br>
+            </tr>
+            <tr>
+                <button id="buttonW" class="button1" onclick="numberclicked(this.value)" type="button" value="1" >1</button>
+                <button id="buttonW" class="button1" onclick="numberclicked(this.value)" type="button" value="2" >2</button>
+                <button id="buttonW" class="button1" onclick="numberclicked(this.value)" type="button" value="3" >3</button>
+                <button id="buttonB" class="button5 operat" onclick="numberclicked(this.value)"     type="button" value="+" >+</button>
+            <br>
+            </tr>
+            <tr>
+                <button id="buttonW" class="button2" onclick="numberclicked(this.value)" type="button" value="0" >0</button>
+                <button id="buttonW" class="button3" onclick="numberclicked(this.value)"     type="button" value="." >.</button>
+                <button id="buttonB" class="button5 operat" onclick="calculate()"     type="buttun" value="=" >=</button>
+            </tr> 
+        </table>
+    </body>
+</html>
