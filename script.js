@@ -1,28 +1,66 @@
-function ACclicked(value) {
+var calculateString = "";
+var currentOperator = ""; // To keep track of the selected operator
+
+function ACclicked() {
+    calculateString = "";
+    currentOperator = "";
     document.getElementById("result").value = "0";
     document.getElementById("buttonWAC").innerText = "AC";
 }
 
-function NPclicked(value) {
-    if (document.getElementById("result").value > 0) {
-        document.getElementById("result").value = -parseFloat(document.getElementById("result").value);
+
+function NPclicked() {
+    var resultElement = document.getElementById("result");
+    var currentValue = parseFloat(resultElement.value);
+
+    if (currentValue !== 0) {
+        resultElement.value = (-currentValue).toString();
+        calculateString = resultElement.value;
     }
 }
 
 function numberclicked(value) {
-    if (document.getElementById("buttonWAC").innerText == "AC") {
-        document.getElementById("result").value = "";
-        document.getElementById("result").value = value;
-        document.getElementById("buttonWAC").innerText = "C";
-    }
-    else {
-        document.getElementById("result").value += value;
-        document.getElementById("buttonWAC").innerText = "C";
+    var resultElement = document.getElementById("result");
+
+    if (currentOperator === "") {
+        if (document.getElementById("buttonWAC").innerText === "AC") {
+            resultElement.value = 0; 
+            resultElement.value = value;
+            calculateString = value;
+            document.getElementById("buttonWAC").innerText = "C";
+        } else {
+            resultElement.value += value;
+            calculateString += value;
+        }
+    } else {
+        resultElement.value = value; // Append the value
+        calculateString += value;
+        currentOperator = "";
     }
 }
 
-function calculate () {
-    var p = document.getElementById("result").value ;
-    var answer = eval(p) ;
-    document.getElementById("result").value = answer ;
+function setOperator(operator) {
+    currentOperator = operator;
+    calculateString += operator; 
 }
+
+
+function calculate() {
+    try {
+        var p = calculateString;
+        var answer = eval(p);
+        document.getElementById("result").value = answer;
+        calculateString = "";
+        currentOperator = ""
+    } catch (error) {
+        document.getElementById("result").value = "Error";
+    }
+}
+
+
+
+// Reset styles and currentOperator on AC click
+document.getElementById("buttonWAC").addEventListener("click", function() {
+    currentOperator = "";
+    resetButtonStyles();
+});

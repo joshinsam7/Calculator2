@@ -1,14 +1,18 @@
 body {
-    background-color: rgb(178, 171, 171);
+    background-color: rgb(0, 0, 0);
     margin-left: 25px;
 }
 
 .res {
-    background-color:rgb(0, 0, 0) ;
-    font-size: 29.23px ;
-    color: white; 
+    background-color: rgb(60, 60, 60);
+    font-size: 29.23px;
+    color: white;
     text-align: right;
-    border-color :black ;
+    border-color: black;
+    width: 49%; /* Adjust the width of the result input element */
+    padding: 10px; /* Add padding for better appearance */
+    margin-top: 10px; /* Add margin for better spacing */
+    margin-bottom: -3px; /* Add margin for better spacing */
 }
 
 .res input {
@@ -17,67 +21,50 @@ body {
 
 #calc {
     display: block;
-    margin-left: 130px ;
+    margin-left: 130px;
     border-color: black;
-    opacity: 1 ;
-    font-weight: bold ;
+    opacity: 1;
+    font-weight: bold;
 }
 
-.button0 {
-    width: 100px ;
-    height: 60px ;
-    background-color: rgb(39, 35, 35);
-    border-color: black;
-    color: white; 
-    font-weight: bold ;
-}
-
-
-.button1 {
-    width: 100px ;
-    height: 60px ;
-    background-color: rgb(83, 80, 80);
-    color: white; 
-    border-color: black;
-    font-weight: bold ;
-}
-
-.button5{
-    width: 100px; 
+.button {
+    width: 100px;
     height: 60px;
-    background-color : rgb(243, 152, 41);
-    border-color: black;
-    color: white; 
-    border: 2;
-    font-weight: bold ;
-}
-
-.button2{
-    width: 200px ;
-    height: 60px; 
-    background-color: rgb(83, 80, 80);
-    color: white; 
-    border-color: black;
-    font-weight: bold ;
-}
-
-.button3 {
-    width: 100px ;
-    height: 60px ;
-    background-color: rgb(83, 80, 80);
-    color: white; 
+    font-weight: bold;
+    color: white;
     border-color: black;
 }
 
-#buttonW:active, #buttonW:focus {
-    background-color: rgb(151, 151, 151); 
+.button-clear {
+    background-color: rgb(43, 41, 41);
 }
 
-#buttonB:active, #buttonB:focus {
-    border-color: black;
-    border-width: thick;
+.button-sign {
+    background-color: rgb(43, 41, 41);
 }
 
-#buttonWAC:active, #buttonWAC:focus {
-    background-color: rgb(151, 151, 151) ;
+.button-operat {
+    background-color: rgb(243, 152, 41);
+}
+
+.button-equal {
+    width: 100%;
+    background-color: rgb(243, 152, 41);
+    font-size: 22px;
+}
+
+.button-number {
+    width: 100%; /* Adjust the width for number and . buttons */
+    background-color: rgb(106, 99, 99);
+}
+
+.button-operat-div {
+    width: 25%; /* Adjust the width for % button */
+    background-color: rgb(151, 151, 151); /* % button color */
+}
+
+button:active,
+button:focus {
+    background-color: rgb(151, 151, 151);
+    outline: none;
 }
